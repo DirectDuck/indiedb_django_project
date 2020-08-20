@@ -1,4 +1,13 @@
-{% for game in object_list %}
+<a href="{% url 'update' %}">MAIN PAGE (UPDATE)</a><br><br>
+<form method="get">
+{{ form.as_p }}
+<input type="submit" value="Search">
+</form>
+{% if games %}
+{% for game in games %}
 <b>{{ game.title }}</b><br/>
-<i>{{ game.status }} {{ game.genre }}</i><br/><br/>
+<i>{{ game.status }} | {{ game.genre }}</i><br/><br/>
 {% endfor %}
+{% else %}
+<b>NOTHING FOUND</b>
+{% endif %}
