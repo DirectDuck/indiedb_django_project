@@ -11,7 +11,7 @@ def game_list(request):
     if 'genre' in request.GET:
         form = SearchForm(request.GET)
         if form.is_valid():
-            genre = form.cleaned_data['genre']
+            genre = form.cleaned_data['genre'].lower().capitalize()
             objects = Game.objects.filter(genre=genre)
     else:
         objects = Game.objects.all()

@@ -16,3 +16,9 @@ class Game(models.Model):
             self.slug = slugify(self.title)
 
         super().save(*args, **kwargs)
+
+
+
+class GameImage(models.Model):
+    game = models.OneToOneField(Game, on_delete=models.CASCADE, primary_key=True, related_name='image')
+    url = models.CharField(max_length=255)

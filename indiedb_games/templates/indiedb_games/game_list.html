@@ -6,6 +6,7 @@
 {% if games %}
 {% for game in games %}
 <b>{{ game.title }}</b><br/>
+{% if game.image %}<img src="{{game.image.url}}"><br> {% endif %}
 <i>{{ game.status }} | {{ game.genre }}</i><br/><br/>
 {% endfor %}
 {% else %}
