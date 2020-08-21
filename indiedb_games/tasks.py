@@ -5,6 +5,6 @@ from celery.schedules import crontab
 
 from . import parser
 
-@periodic_task(run_every=(crontab(minute='*/1')), name='some_task')
+@periodic_task(run_every=(crontab(hour='*/1', minute=0)), name='some_task')
 def some_task():
 	parser.update_db()
