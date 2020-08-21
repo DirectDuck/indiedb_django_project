@@ -23,5 +23,4 @@ def game_list(request):
     )
 
 def update_game_list(request):
-    parser.update_db()
     return redirect('list')
