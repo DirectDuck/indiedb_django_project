@@ -21,6 +21,3 @@ def game_list(request):
         {'games': objects,
          'form': form}
     )
-
-def update_game_list(request):
-    return redirect('list')

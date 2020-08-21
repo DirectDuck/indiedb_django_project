@@ -1,8 +1,10 @@
-from celery.task.schedules import crontab
-from celery.decorators import periodic_task
+from __future__ import absolute_import, unicode_literals
+
+from celery.task import periodic_task
+from celery.schedules import crontab
 
 from . import parser
 
-@periodic_task(run_every=(crontab(minute='*/1')), name="some_task", ignore_result=True)
-def parser_update_db():  
-    parser.update_db()
+@periodic_task(run_every=(crontab(minute='*/1')), name='some_task')
+def some_task():
+	parser.update_db()
