@@ -1,3 +1,6 @@
 Pipfile
 Pipfile.lock
 .env
+helpfile
+celerybeat-schedule
+dump.rdb
