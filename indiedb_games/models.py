@@ -5,6 +5,7 @@ class Game(models.Model):
     title = models.CharField(max_length=255)
     genre = models.CharField(max_length=255)
     status = models.CharField(max_length=255)
+    url = models.CharField(max_length=255, default='#')
 
     slug = models.SlugField(max_length=255, unique=True, blank=True)
 

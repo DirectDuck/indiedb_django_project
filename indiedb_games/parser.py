@@ -17,8 +17,10 @@ def parse_status_and_genre(game_container: BeautifulSoup) -> tuple:
 def parse_image_urls(soup: BeautifulSoup) -> list:
     images = soup.findAll('a', class_='image')
     image_urls = []
+    
     for image in images:
         image_urls.append(image.img['src'])
+    
     return image_urls
 
 
@@ -34,6 +36,8 @@ def _scrap_new_games(soup: BeautifulSoup) -> dict:
 
     for i in range(len(titles)):
         title = titles[i].text
+        url = 'https://www.indiedb.com' + titles[i].a['href']
+        
         try:
             all_game_objects_in_db.get(title=title)
             break
@@ -42,6 +46,7 @@ def _scrap_new_games(soup: BeautifulSoup) -> dict:
             content.append({'title': title, 
                             'status': status, 
                             'genre': genre,
+                            'url': url,
                             'image_url': image_urls[i]})
 
     return content
@@ -51,8 +56,10 @@ def _add_game_to_db(game: dict) -> None:
     new_db_game = Game(
         title=game['title'],
         genre=game['genre'],
-        status=game['status'])
+        status=game['status'],
+        url=game['url'])
     new_db_game.save()
+    
     image_db_object = GameImage(game=new_db_game, url=game['image_url'])
     image_db_object.save()
 

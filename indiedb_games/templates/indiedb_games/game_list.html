@@ -1,12 +1,13 @@
 <a href="{% url 'list' %}">MAIN PAGE</a><br><br>
 <a href="{% url 'update' %}">UPDATE DB</a><br><br>
+<a href="{% url 'clear' %}">CLEAR DB</a><br><br>
 <form method="get">
 {{ form.as_p }}
 <input type="submit" value="Search">
 </form>
 {% if games %}
 {% for game in games %}
-<b>{{ game.title }}</b><br/>
+<b><a href="{{ game.url }}">{{ game.title }}</a></b><br/>
 {% if game.image %}<img src="{{game.image.url}}"><br> {% endif %}
 <i>{{ game.status }} | {{ game.genre }}</i><br/><br/>
 {% endfor %}
@@ -14,4 +15,4 @@
 <b>NOTHING FOUND</b>
 {% endif %}
 
-{% include "pagination.html" with page=games genre=genre%}
+{% include "pagination.html" with page=games genre_additional_url=genre_additional_url%}
