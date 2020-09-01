@@ -17,3 +17,12 @@ def paginate_objects(request, objects):
         paginated_objects = paginator.page(paginator.num_pages)
 
     return paginated_objects
+
+
+def generate_additional_genre_url(genre: str):
+    if genre:
+        genre_additional_url = f'&genre={genre}'
+    else:
+        genre_additional_url = ''
+
+    return genre_additional_url

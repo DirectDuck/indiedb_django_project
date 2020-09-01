@@ -18,10 +18,7 @@ def game_list(request):
     else:
         objects = Game.objects.all()
 
-    if genre:
-        genre_additional_url = f'&genre={genre}'
-    else:
-        genre_additional_url = ''
+    genre_additional_url = services.generate_additional_genre_url(genre)
 
     objects = services.paginate_objects(request, objects)
 
