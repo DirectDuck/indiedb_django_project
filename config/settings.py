@@ -36,6 +36,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # DJANGO
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,6 +44,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # THIRD-PARTY
+    'django_crontab',
+
+    # LOCAL
     'indiedb_games.apps.IndiedbGamesConfig',
 ]
 
@@ -129,7 +134,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-CELERY_BROKER_URL = 'redis://localhost:6379'
-
-CELERY_ACCEPT_CONTENT = ['json']
-CELERY_TASK_SERIALIZER = 'json'
+# django-crontab jobs
+CRONJOBS = [
+    ('40 * * * *', 'indiedb_games.cron.parse_indiedb')
+]

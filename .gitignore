@@ -4,3 +4,4 @@ Pipfile.lock
 helpfile
 celerybeat-schedule
 dump.rdb
+__pycache__

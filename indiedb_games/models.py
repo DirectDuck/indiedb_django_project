@@ -1,6 +1,7 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 
+
 class Game(models.Model):
     title = models.CharField(max_length=255)
     genre = models.CharField(max_length=255)
@@ -19,7 +20,7 @@ class Game(models.Model):
         super().save(*args, **kwargs)
 
 
-
 class GameImage(models.Model):
-    game = models.OneToOneField(Game, on_delete=models.CASCADE, primary_key=True, related_name='image')
+    game = models.OneToOneField(
+        Game, on_delete=models.CASCADE, primary_key=True, related_name='image')
     url = models.CharField(max_length=255)
