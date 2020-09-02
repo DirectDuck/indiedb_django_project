@@ -22,7 +22,7 @@ Welcome to my test Django project. It was created just to showcase some of my sk
 - Django templates (As simple as possible)
 - Forms
 
-### TODO
+## TODO
 
 1. Users
 >Initially, the project was not supposed to have anything related to users and authentication / authorization systems, but in the future this may become part of the project.
@@ -31,7 +31,7 @@ Welcome to my test Django project. It was created just to showcase some of my sk
 
 3. Deploying application
 
-### How to run this on your machine
+## How to run this on your machine
 Important Note: It is impossible to run the project on Windows since django-crontab only works with Linux-like operating systems.
 
 1. Enter `git clone https://github.com/DirectDuck/indiedb_django_project.git` in terminal
