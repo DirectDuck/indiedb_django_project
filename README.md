@@ -1,3 +1,4 @@
+
 # Indiedb Django Project
 
 Welcome to my test Django project. It was created just to showcase some of my skills.
@@ -39,14 +40,14 @@ Important Note: It is impossible to run the project on Windows since django-cron
 3. Install dependencies from requirements.txt via `pip install -r requirements.txt` (It is recommended to use a virtual environment)
 4. Create **Postgresql** database for this project
 5. In `config/` folder create `.env` file and fill it with following variables:  
-	1. DEBUG
+	- DEBUG
 	>Either "on" or "off"
 
-	2. INDIEDB_PROJECT_SECRET_KEY
-	3. INDIEDB_PROJECT_DATABASE_NAME
-	4. INDIEDB_PROJECT_DATABASE_USERNAME
-	5. INDIEDB_PROJECT_DATABASE_PASSWORD
-	6. INDIEDB_PROJECT_DATABASE_HOST
-	7. INDIEDB_PROJECT_DATABASE_PORT
+	- INDIEDB_PROJECT_SECRET_KEY
+	- INDIEDB_PROJECT_DATABASE_NAME
+	- INDIEDB_PROJECT_DATABASE_USERNAME
+	- INDIEDB_PROJECT_DATABASE_PASSWORD
+	- INDIEDB_PROJECT_DATABASE_HOST
+	- INDIEDB_PROJECT_DATABASE_PORT
 6. From terminal, run `python manage.py migrate` 
 7. From terminal, run `python manage.py runserver` and proceed to `http://127.0.0.1:8000/`
