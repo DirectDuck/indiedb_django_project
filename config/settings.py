@@ -88,11 +88,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'indiedb_project',
-        'USER': 'admin',
-        'PASSWORD': env('INDIEDB_PROJECT_PASSWORD'),
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': env('INDIEDB_PROJECT_DATABASE_NAME'),
+        'USER': env('INDIEDB_PROJECT_DATABASE_USERNAME'),
+        'PASSWORD': env('INDIEDB_PROJECT_DATABASE_PASSWORD'),
+        'HOST': env('INDIEDB_PROJECT_DATABASE_HOST'),
+        'PORT': env('INDIEDB_PROJECT_DATABASE_PORT'),
     }
 }
 
