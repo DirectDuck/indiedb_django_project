@@ -49,17 +49,8 @@ Third-party application to install:
 
 1. Enter `git clone https://github.com/DirectDuck/indiedb_django_project.git` in terminal
 2. Go inside project folder (`cd indiedb_django_project`)
-3. In `config/` folder create `.env` file and fill it with following variables:  
-	- DEBUG
-	>Either "on" or "off"
+3. From terminal, run `docker-compose --env-file ./config/.env.example up -d --build` 
+4. From terminal, run `docker-compose exec web python manage.py migrate` and proceed to `http://127.0.0.1:8000/`
 
-	- INDIEDB_PROJECT_SECRET_KEY
-	- INDIEDB_PROJECT_DATABASE_NAME
-	- INDIEDB_PROJECT_DATABASE_USERNAME
-	- INDIEDB_PROJECT_DATABASE_PASSWORD
-	- INDIEDB_PROJECT_DATABASE_HOST
-	- INDIEDB_PROJECT_DATABASE_PORT
-4. From terminal, run `docker-compose --env-file ./config/.env.example up -d --build` 
-5. From terminal, run `docker-compose exec web python manage.py migrate` and proceed to `http://127.0.0.1:8000/`
 > If page doesn't load then type `docker-compose logs`. If you can't manage to resolve the problem, create an issue.
 
