@@ -1,4 +1,5 @@
 
+
 # Indiedb Django Project
 
 Welcome to my test Django project. It was created just to showcase some of my skills.
@@ -28,18 +29,27 @@ Welcome to my test Django project. It was created just to showcase some of my sk
 1. Users
 >Initially, the project was not supposed to have anything related to users and authentication / authorization systems, but in the future this may become part of the project.
 
-2. Dockerization of project
+2. ~~Dockerization of project~~
 
 3. Deploying application
+
+4. Making it look pretty with bootstrap
 
 ## How to run this on your machine
 Important Note: It is impossible to run the project on Windows since django-crontab only works with Linux-like operating systems.
 
+Third-party application to install:
+
+- Docker version 19.03.12
+- docker-compose version 1.26.2
+- PostgreSQL 11.9
+
+>You might try running with different versions, but it's not guaranteed.
+
+
 1. Enter `git clone https://github.com/DirectDuck/indiedb_django_project.git` in terminal
 2. Go inside project folder (`cd indiedb_django_project`)
-3. Install dependencies from requirements.txt via `pip install -r requirements.txt` (It is recommended to use a virtual environment)
-4. Create **Postgresql** database for this project
-5. In `config/` folder create `.env` file and fill it with following variables:  
+3. In `config/` folder create `.env` file and fill it with following variables:  
 	- DEBUG
 	>Either "on" or "off"
 
@@ -49,5 +59,7 @@ Important Note: It is impossible to run the project on Windows since django-cron
 	- INDIEDB_PROJECT_DATABASE_PASSWORD
 	- INDIEDB_PROJECT_DATABASE_HOST
 	- INDIEDB_PROJECT_DATABASE_PORT
-6. From terminal, run `python manage.py migrate` 
-7. From terminal, run `python manage.py runserver` and proceed to `http://127.0.0.1:8000/`
+4. From terminal, run `docker-compose up -d --build` 
+5. From terminal, run `docker-compose exec web python manage.py migrate` and proceed to `http://127.0.0.1:8000/`
+> If page doesn't load then type `docker-compose logs`. If you can't manage to resolve the problem, create an issue.
+
