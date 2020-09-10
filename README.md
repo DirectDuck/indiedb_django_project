@@ -44,7 +44,7 @@ Third-party application to install:
 - docker-compose version 1.26.2
 - PostgreSQL 11.9
 
->You might try running with different versions, but it's not guaranteed.
+>You might try running with different versions, but it's not guaranteed to work.
 
 
 1. Enter `git clone https://github.com/DirectDuck/indiedb_django_project.git` in terminal
