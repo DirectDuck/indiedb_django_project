@@ -9,11 +9,3 @@ COPY Pipfile Pipfile.lock /code/
 RUN pip install pipenv && pipenv install --system
 
 COPY . /code/
-
-RUN apt-get update
-RUN apt-get install -y cron
-
-RUN service cron start
-
-RUN python /code/manage.py crontab add
-
