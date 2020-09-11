@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+from time import sleep
 
 from .models import Game, GameImage
 
@@ -68,7 +69,14 @@ def _add_game_to_db(game: dict) -> None:
 
 def update_db() -> None:
     link = r'https://www.indiedb.com/games/page/1?sort=id-desc#gamesbrowse'
-    source = requests.get(link).text
+    while True:
+        try:
+            source = requests.get(link).text
+        except requests.exceptions.ConnectionError:
+            print(f"Can't connect to {link}")
+            sleep(5)
+        else:
+            break
     soup = BeautifulSoup(source, 'lxml')
 
     scrapped_games = _scrap_new_games(soup)
