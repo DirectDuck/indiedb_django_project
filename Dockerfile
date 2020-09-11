@@ -12,3 +12,8 @@ COPY . /code/
 
 RUN apt-get update
 RUN apt-get install -y cron
+
+RUN service cron start
+
+RUN python /code/manage.py crontab add
+

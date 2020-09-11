@@ -136,5 +136,5 @@ STATIC_URL = '/static/'
 
 # django-crontab jobs
 CRONJOBS = [
-    ('40 * * * *', 'indiedb_games.cron.parse_indiedb')
+    ('* * * * *', 'indiedb_games.cron.parse_indiedb')
 ]
