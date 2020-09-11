@@ -15,6 +15,7 @@ Welcome to my test Django project. It was created just to showcase some of my sk
 - django-crontab
 - Celery + Redis (now replaced with django-crontab)
 - django-environ
+- Docker
 
 ### Django topics covered
 
