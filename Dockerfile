@@ -10,4 +10,5 @@ RUN pip install pipenv && pipenv install --system
 
 COPY . /code/
 
+RUN apt-get update
 RUN apt-get install -y cron
