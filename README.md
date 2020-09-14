@@ -1,5 +1,6 @@
 
 
+
 # Indiedb Django Project
 
 Welcome to my test Django project. It was created just to showcase some of my skills.
@@ -12,10 +13,11 @@ Welcome to my test Django project. It was created just to showcase some of my sk
  - BeautifulSoup4 + requests
 
 ### Secondary:
-- django-crontab
-- Celery + Redis (now replaced with django-crontab)
+- Celery + Redis
 - django-environ
 - Docker
+- ~~django-crontab~~ 
+> django-crontab replaced again Celery + Redis since it can't work properly with docker
 
 ### Django topics covered
 
@@ -37,16 +39,16 @@ Welcome to my test Django project. It was created just to showcase some of my sk
 4. Making it look pretty with bootstrap
 
 ## How to run this on your machine
-Important Note: It is impossible to run the project on Windows since django-crontab only works with Linux-like operating systems.
+THIS PROJECT WAS TESTED ONLY ON LINUX
 
 Third-party application to install:
 
 - Docker version 19.03.12
 - docker-compose version 1.26.2
-- PostgreSQL 11.9
 
 >You might try running with different versions, but it's not guaranteed to work.
 
+### Step-by-step guide
 
 1. Enter `git clone https://github.com/DirectDuck/indiedb_django_project.git` in terminal
 2. Go inside project folder (`cd indiedb_django_project`)
@@ -55,3 +57,6 @@ Third-party application to install:
 
 > If page doesn't load then type `docker-compose logs`. If you can't manage to resolve the problem, create an issue.
 
+### Possible errors
+
+If you see `Is the server running on host "db" (172.18.0.3) and acceptingTCP/IP connections on port 5432?` error try to stop docker with `docker-compose down` and continue from third step of [step-by-step guide](https://github.com/DirectDuck/indiedb_django_project#step-by-step-guide).
