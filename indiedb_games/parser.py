@@ -2,6 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 from time import sleep
 
+from typing import Dict
+
 from .models import Game, GameImage
 
 
@@ -55,7 +57,7 @@ def _scrap_new_games(soup: BeautifulSoup) -> dict:
     return content
 
 
-def _add_game_to_db(game: dict) -> None:
+def _add_game_to_db(game: Dict[str, str]) -> None:
     new_db_game = Game(
         title=game['title'],
         genre=game['genre'],
